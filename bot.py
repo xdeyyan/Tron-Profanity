@@ -40,4 +40,59 @@ async def obrisi(ctx, amount=100):
     await client.delete_message(messages)
     await client.say('Poruke obrisane.')
     
+ #Sistem moderacije
+@client.command()
+@commands.has_permissions(administrator=True)
+async def kick(ctx, member:discord.Member = None):
+    if not member:
+        await ctx.send("Molim izaberi korisnika")
+        return
+    await member.kick()
+    await ctx.send(f"{member.mention} je kikovan")
+@kick.error
+async def kick_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("Nemaš dozovlu da kickuješ korisnike!")
+ 
+@client.command()
+@commands.has_permissions(administrator=True)
+async def ban(ctx, member:discord.Member = None):
+    if not member:
+        await ctx.send("Molim izaberi korisnika")
+        return
+    await member.ban()
+    await ctx.send(f"{member.mention} je banovan")
+@ban.error
+async def kick_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("Nemaš dozvolu da banuješ korisnike!")
+ 
+@client.command()
+@commands.has_permissions(administrator=True)
+async def mute(ctx, member: discord.Member=None):
+    if not member:
+        await ctx.send("Molim izaberi korisnika")
+        return
+    role = discord.utils.get(ctx.guild.roles, name="muted")
+    await member.add_roles(role)
+@mute.error
+async def mute_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("Nemaš dozvolu da mutuješ korisnike!")
+ 
+ 
+@client.command()
+@commands.has_permissions(administrator=True)
+async def unmute(ctx, member: discord.Member=None):
+    if not member:
+        await ctx.send("Molim izaberi korisnika")
+        return
+    role = discord.utils.get(ctx.guild.roles, name="muted")
+    await member.remove_roles(role)
+@mute.error
+async def unmute_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send("Nemaš dozvolu da unmutuješ korisnike!")
+
+
 client.run("NTI2MTc4MjM3MzQxMTA2MTc3.DwDyLg.v2YmHAvkgrOdKnlrkz3rRywopsE")
