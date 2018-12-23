@@ -29,7 +29,7 @@ async def on_message(message):
     if message.content.upper().startswith('!SAJT'):
         userID = message.author.id
         await client.send_message(message.channel, "<@%s>, posjeti link 'https://www.snjesko.ga/' " % (userID))
-     if message.content.upper().startswith('!IGRICE')
+    if message.content.upper().startswith('!IGRICE'):
         await client.send_message(message.channel, "Zula Europe \n Counter-Strike: Global Offensive \n Grand Theft Auto V \n Fortnite \n Far Cry 5 \n Subnautica \n Kerbal Space Program")   
 @client.command(pass_context=True)
 async def obrisi(ctx, amount=100):
