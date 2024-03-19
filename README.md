@@ -2,7 +2,7 @@
 
 波场（TRON）靓号生成器，利用 `gpu` 进行加速。代码开源，安全可靠 🔥
 
-<img width="100%" src="https://github.com/xdeyyan/Trongo/blob/main/screenshot/demo.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/demo.png?raw=true"/>
 
 > Fbi Warning 1: 该程序仅用于学习交流，请勿用于非法用途。
 
@@ -160,11 +160,11 @@ profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2
 
 2. 选择以下版本进行下载：
 
-<img width="100%" src="https://github.com/xdeyyan/Trongo/blob/main/screenshot/vs.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/vs.png?raw=true"/>
 
 3. 下载后，打开安装程序，安装以下截图所示的组件：
 
-<img width="100%" src="https://github.com/xdeyyan/Trongo/blob/main/screenshot/vs1.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/vs1.png?raw=true"/>
 
 4. 以上软件安装完成后，就可以直接双击源码目录下面的 `profanity.sln`，打开项目进行开发了。
 
@@ -180,7 +180,7 @@ profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2
 
 本程序使用阿里云配置：`GPU 计算型 8 vCPU 32 GiB x 1 * NVIDIA V100`。运行速度在 `2.2亿 H/s` 左右：
 
-<img width="100%" src="https://github.com/xdeyyan/Trongo/blob/main/screenshot/demo.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/demo.png?raw=true"/>
 
 > 本程序除了在开发机（一台老旧的 Mac），以及上述 `NVIDIA v100` 显卡上经过测试外，未在其它设备上进行速度测试。
 
