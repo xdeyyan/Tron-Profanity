@@ -134,7 +134,7 @@ TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC
 ```
 
 上面这两条匹配规则：
-profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
+- profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
 - 第一条，是匹配以字母 `Z,8` 前2位的前缀和后4位的尾缀的靓号。
 - 第二条，是匹配这条地址的前2后4 `6` 位，实际运行的时候，会自动修正为：TC-CCCCC。
 
