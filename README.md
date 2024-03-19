@@ -10,7 +10,7 @@
 
 ## 广告
 
-需要以太坊（ETH）靓号生成的，请移步：[profanity-ether](https://github.com/GG4mida/profanity-ether)
+需要程序二开，bug修复请联系我的Telegram：[@strevalbr](https://t.me/strevalbr)
 
 ## 说明
 
@@ -21,8 +21,7 @@
 
 ### Windows
 
-下载 [dist/windows.zip](https://github.com/xdeyyan/Trongo/blob/main/dist/windows.zip)，解压，然后直接运行 `start.bat` 即可。
-
+下载 [dist/Release.zip](https://github.com/xdeyyan/Tron-Profanity/blob/master/dist/Release.zip)，解压，然后直接运行 `start.bat` 即可。
 > 请参考下文 `命令 & 参数` 章节说明，自行编辑 `start.bat` 配置运行参数。
 
 ### Mac
@@ -94,32 +93,48 @@ Fbi Warning:
 
 #### 单个地址
 
-```bash
-./profanity --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 2 --suffix-count 4
+```bash  Mac/Linux
+./profanity --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --prefix-count 2 --suffix-count 4
+```bash  Windows
+profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --prefix-count 1 --suffix-count 4
+
+可以参考star.bat文件
+
+REM //   matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC  //代表选中地址
+REM //   output Trx-address.txt //代表GPU计算出地址后写入到Trx-address.txt这个文本内
+REM //   prefix-count 2         //代表匹配matching参数地址的前缀2位
+REM //   uffix-count 4          //代表匹配matching参数地址的尾缀4位
 ```
 
 #### 文件
 
-```bash
-./profanity --matching profanity.txt --prefix-count 2 --suffix-count 4 --quit-count 1
-```
+```bash  Mac/Linux
+./profanity --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
+```bash  Windows
+profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
+REM //matching profanity.txt //代表使用profanity.txt内的地址
+REM //output Trx-address.txt //代表GPU计算出地址后写入到Trx-address.txt这个文本内
+REM //prefix-count 2         //代表匹配profanity.txt文本内前缀2位
+REM //uffix-count 4          //代表匹配profanity.txt文本内尾缀4位
 
 匹配文件里面，目前支持两种写法，可参考内置 `profanity.txt`。举个例子：
 
 ```plaintext
 TTTTTTTTTTZZZZZZZZZZ
-TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D
+TTTTTTTTTT8888888888
+TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC
 ```
 
 上面这两条匹配规则：
-- 第一条，是匹配以字母 `Z` 结尾的靓号。
-- 第二条，是匹配这条地址的前后 `10` 位，实际运行的时候，会自动修正为：TUqEg3dzVE8SBdhmao8D。
+profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
+- 第一条，是匹配以字母 `Z,8` 前2位的前缀和后4位的尾缀的靓号。
+- 第二条，是匹配这条地址的前2后4 `6` 位，实际运行的时候，会自动修正为：TC-CCCCC。
 
 有了匹配规则，再结合 `prefix-count`（最少匹配前缀数量） & `suffix-count`（最少匹配后缀数量），即可实现任意规则靓号地址生成。
 
 ## 开发
 
-> 这里主要讲讲如何构建 `windows` 平台的 `exe 可执行程序`。`mac` 机器理论上可直接 `make`，然后执行就行。
+> 这里主要讲讲如何构建 `windows` 平台的 `exe 可执行程序`。`mac` 机器理论上可直接 `make`，然后执行就行。PS:linux本人没有开发环境,请自行理解。
 
 > 本人在开发的时候，是买了一台阿里云 `v100 gpu卡` + `windows server 2022` 的抢占式实例。如果已经有对应的开发环境，可以不用花这个钱。
 
@@ -157,7 +172,7 @@ TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D
 
 ### 开发备注
 
-- 不论开发环境是 `windows` 还是 `mac`，在开发调试时可手动指定 `-I` 参数，将其设置为一个较小的值，可极大加快启动速度。
+- 不论开发环境是 `windows` 还是 `mac`，又或者是`Linux`在开发调试时可手动指定 `-I` 参数，将其设置为一个较小的值，可极大加快启动速度。
 - `mac` 环境可能需要指定 `-w 1`，以生成正确的私钥。
 - 部分平台启动异常，可能需要使用 `-s` 参数，跳过设备搭载的集成显卡设备。
 
@@ -218,7 +233,7 @@ cl_ulong4 Dispatcher::Device::createSeed()
 
 ## 打赏
 
-- TRON: TK2yZDdmRXVNPvduHk5BPBeY1KcxUMv4mP
+- TRON: TTbgpGjYa24YTiKZfGMcmNEW8Yoqvpx7Pu
 
 ## 一点题外话
 
@@ -226,4 +241,4 @@ cl_ulong4 Dispatcher::Device::createSeed()
 
 ## 联系
 
-- 电报: [@jackslowfak](https://t.me/jackslowfak)
+- 电报: [@strevalbr](https://t.me/strevalbr)
