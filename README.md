@@ -156,11 +156,11 @@ profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2
 
 2. 根据服务器配置搜索驱动，然后下载：
 
-<img width="100%" src="https://github.com/xdeyyan/Trongo/blob/main/screenshot/nvidia.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/nvidia.png?raw=true"/>
 
 3. 显卡驱动安装完毕后，打开设备管理器，可以查看到显卡信息（如果不安装驱动，是看不到这个的）：
 
-<img width="100%" src="https://github.com/xdeyyan/Trongo/blob/main/screenshot/gpu.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/gpu.png?raw=true"/>
 
 ### 安装 `visual studio`
 
