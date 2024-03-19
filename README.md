@@ -30,7 +30,8 @@
 
 ### Linux
 
-本人由于没有Linux开发环境,如果你懂得linux开发 那么基本没问题
+先安装 cuda 驱动，再安装 g++，再下载源码，最后解压后进入目录运行：
+g++ Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp -ICurl -IOpenCL -o profanity.x64
 
 ## 命令介绍
 
@@ -167,11 +168,11 @@ profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2
 
 2. 选择以下版本进行下载：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/vs.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/nvidia.png"/>
 
 3. 下载后，打开安装程序，安装以下截图所示的组件：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/vs1.png?raw=true"/>
+<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/nvidia.png"/>
 
 4. 以上软件安装完成后，就可以直接双击源码目录下面的 `profanity.sln`，打开项目进行开发了。
 
