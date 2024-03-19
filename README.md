@@ -1,6 +1,6 @@
 # Tron Profanity
 
-波场（TRON）靓号生成器，利用 `gpu` 进行加速。代码开源，安全可靠 🔥
+波场（TRON）靓号生成器，利用 `gpu` 进行加速。代码完全开源，安全可靠 🔥
 
 <img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/demo.png?raw=true"/>
 
@@ -27,6 +27,10 @@
 ### Mac
 
 下载源码，然后定位到目录下执行 `make`，接着运行 `./profanity.x64 ...` 即可。
+
+### Linux
+
+本人由于没有Linux开发环境,如果你懂得linux开发 那么基本没问题
 
 ## 命令介绍
 
@@ -59,14 +63,14 @@ Examples:
   ./profanity --matching profanity.txt --post http://127.0.0.1:7001/api
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 8
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 10 --quit-count 1
-  ./profanity --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 2 --suffix-count 4 --quit-count 1
+  ./profanity --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --prefix-count 2 --suffix-count 4 --quit-count 1
 
 About:
 
   Profanity is a vanity address generator for Tron: https://tron.network
   The software is modified based on ethereum profanity: https://github.com/johguse/profanity
-  Please make sure the program you are running is download from: https://github.com/GG4mida/profanity-tron
-  Author: telegram -> @jackslowfak
+  Please make sure the program you are running is download from: [https://github.com/xdeyyan/Tron-Profanity/](https://github.com/xdeyyan/Tron-Profanity/)
+  Author: telegram -> @strevalbr
 
 Fbi Warning:
 
@@ -112,6 +116,9 @@ REM //   uffix-count 4          //代表匹配matching参数地址的尾缀4位
 ./profanity --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
 ```bash  Windows
 profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
+
+可以参考star.bat文件
+
 REM //matching profanity.txt //代表使用profanity.txt内的地址
 REM //output Trx-address.txt //代表GPU计算出地址后写入到Trx-address.txt这个文本内
 REM //prefix-count 2         //代表匹配profanity.txt文本内前缀2位
