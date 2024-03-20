@@ -4,11 +4,11 @@
 ![](https://img.shields.io/badge/baseon-gpu-yellowgreen.svg)
 ![](https://img.shields.io/badge/language-c,c++-orange.svg)
 ![](https://img.shields.io/badge/platform-windows,linux-yellow.svg)
-![](https://img.shields.io/badge/telegram-@sponsord2022-blue.svg)
 
 波场（TRX）地址生成器，利用 `GPU` 进行加速。代码开源，安全可靠 🔥
 
 <img width="100%" src="screenshot/demo.gif?raw=true"/>
+
 
 > Fbi Warning 1: 该程序仅用于学习交流，请勿用于非法用途。
 
@@ -85,7 +85,7 @@ Examples:
   ./profanity --matching profanity.txt --post http://127.0.0.1:7001/api
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 8
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 10 --quit-count 1
-  ./profanity --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 2 --suffix-count 4 --quit-count 1
+  ./profanity --matching TDG25JBzvor6aA5q2GcxoyQ14cQVRzPwk7 --prefix-count 2 --suffix-count 4 --quit-count 1
 
 About:
 
@@ -124,27 +124,32 @@ Fbi Warning:
 #### 单个地址
 
 ```bash
-# 匹配前3后5
-profanity.exe --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 3 --suffix-count 5
+# 匹配前2后5位
+profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --prefix-count 2 --suffix-count 5 --quit-count 100
+# 匹配后6
+profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --suffix-count 6 --quit-count 100
 ```
 
 #### 文件
 
 ```bash
-# 匹配后8
-profanity.exe --matching profanity.txt --suffix-count 8 --quit-count 100
+# 匹配后6位
+profanity.exe --matching profanity.txt --output Trx-address.txt --suffix-count 6 --quit-count 100
+# 匹配前2位和后5位
+profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4 --quit-count 100
 ```
 
 匹配文件里面，目前支持两种写法，可参考内置 `profanity.txt`。举个例子：
 
 ```plaintext
 TTTTTTTTTTZZZZZZZZZZ
-TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D
+TDG25JBzvor6aA5q2GcxoyQ14cQVRzPwk7
+如果用上面匹配后6位的命令,那么久是匹配ZZZZZZ和RzPwk7尾缀
 ```
 
 上面这两条匹配规则：
-- 第一条，是匹配以字母 `Z` 结尾的地址。
-- 第二条，是匹配这条地址的前后 `10` 位，实际运行的时候，会自动修正为：TUqEg3dzVE8SBdhmao8D。
+- 第一条，是匹配以字母 `Z` 结尾后六位相同的地址。
+- 第二条，是匹配这条地址的后 `6` 位，实际运行的时候，会自动修正为：RzPwk7。
 
 有了匹配规则，再结合 `prefix-count`（最少匹配前缀数量） & `suffix-count`（最少匹配后缀数量），即可实现任意规则地址生成。
 
@@ -196,11 +201,13 @@ TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D
 
 本程序使用阿里云配置：`GPU 计算型 8 vCPU 32 GiB x 1 * NVIDIA V100`。运行速度在 `2.2亿 H/s` 左右：
 
-<img width="100%" src="screenshot/demo.png?raw=true"/>
+<img width="100%" src="screenshot/demo.gif?raw=true"/>
 
-> 本程序除了在开发机（一台老旧的 Mac），以及上述 `NVIDIA v100` 显卡上经过测试外，未在其它设备上进行速度测试。
+> 本程序除了在开发机（一台公司给配的苹果 M2系列的 Mac），以及上述 `NVIDIA V100` 显卡上经过测试外，未在其它设备上进行速度测试。
 
 > 请不要纠结于对比各种设备、各种平台差异化的运行速度。没意义。
+
+> 阿里云/海鲜市场/taobao等等很多地方都可以租到GPU算力。
 
 最后，关于速度的问题再多提几句：
 
@@ -265,4 +272,3 @@ cl_ulong4 Dispatcher::Device::createSeed()
 
 - 电报: [@strevalbr](https://t.me/strevalbr)
 
-![Visitor Count](https://profile-counter.glitch.me/{sponsord}/count.svg)
