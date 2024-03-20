@@ -1,12 +1,18 @@
-# Tron Profanity
+# profanity-tron
 
-波场（TRON）靓号生成器，利用 `gpu` 进行加速。代码完全开源，安全可靠 🔥
+![](https://img.shields.io/github/actions/workflow/status/sponsord/profanity-tron/release.yml)
+![](https://img.shields.io/badge/baseon-gpu-yellowgreen.svg)
+![](https://img.shields.io/badge/language-c,c++-orange.svg)
+![](https://img.shields.io/badge/platform-windows,linux-yellow.svg)
+![](https://img.shields.io/badge/telegram-@sponsord2022-blue.svg)
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/demo.png?raw=true"/>
+波场（TRX）地址生成器，利用 `GPU` 进行加速。代码开源，安全可靠 🔥
+
+<img width="100%" src="screenshot/demo.png?raw=true"/>
 
 > Fbi Warning 1: 该程序仅用于学习交流，请勿用于非法用途。
 
-> Fbi Warning 2: 本程序仅在本仓库发布并更新，请勿下载运行其它来路不明的版本，由此造成的一切损失，请自行承担。
+> Fbi Warning 2: 本程序仅在本仓库发布并更新，请勿下载运行其它来路不明的版本，由此造成的一切损失，由使用者自行承担。
 
 ## 广告
 
@@ -14,7 +20,7 @@
 
 ## 说明
 
-- 本程序基于以太坊地址生成器：[profanity](https://github.com/johguse/profanity) 修改而来，同时修复了原程序私钥可爆破的问题。可参考下方 `安全` 章节说明。
+- 本程序基于以太坊地址生成器：[profanity](https://github.com/johguse/profanity) 修改而来，同时修复了原程序私钥可爆破的问题。请参考下方 `安全` 章节说明。
 - 即使本程序已修复原程序已公开漏洞，但仍然建议你对生成的地址进行 `多签` 后再使用。多签后的地址，可保证 `100%` 安全，关于如何多签，请自行谷歌。 
 
 ## 运行
@@ -22,16 +28,28 @@
 ### Windows
 
 下载 [dist/Release.zip](https://github.com/xdeyyan/Tron-Profanity/releases/download/Release/Release.zip)，解压，然后直接运行 `start.bat` 即可。
+
 > 请参考下文 `命令 & 参数` 章节说明，自行编辑 `start.bat` 配置运行参数。
+
+> 运行的设备如果有集成显卡，请添加 `--skip 1` 把集成显卡过滤之，否则可能会导致：1. 跑不起来，2. 生成的地址和私钥不匹配。
+
+> 如果提示 `vcruntime140_1.dll` 相关异常，请安装 `visual studio` 应用程序，官方下载链接：[https://visualstudio.microsoft.com/zh-hans/vs/](https://visualstudio.microsoft.com/zh-hans/vs/)
+
+> 如果提示 `OpenCL 找不到`，请安装 `cuda` 驱动。 
 
 ### Mac
 
-下载源码，然后定位到目录下执行 `make`，接着运行 `./profanity.x64 ...` 即可。
+下载源码，然后定位到目录下执行 `make`，接着运行 `./profanity.x64 [OPTIONS]`。
 
 ### Linux
 
-先安装 cuda 驱动，再安装 g++，再下载源码，最后解压后进入目录运行：
+先安装 `cuda` 驱动，再安装 `g++`，再下载源码，最后解压后进入目录运行：
+
+```bash
 g++ Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp -ICurl -IOpenCL -o profanity.x64
+```
+
+> 关于 `g++` 的使用，请自行谷歌。
 
 ## 命令介绍
 
@@ -64,14 +82,14 @@ Examples:
   ./profanity --matching profanity.txt --post http://127.0.0.1:7001/api
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 8
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 10 --quit-count 1
-  ./profanity --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --prefix-count 2 --suffix-count 4 --quit-count 1
+  ./profanity --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 2 --suffix-count 4 --quit-count 1
 
 About:
 
   Profanity is a vanity address generator for Tron: https://tron.network
   The software is modified based on ethereum profanity: https://github.com/johguse/profanity
-  Please make sure the program you are running is download from: [https://github.com/xdeyyan/Tron-Profanity/](https://github.com/xdeyyan/Tron-Profanity/)
-  Author: telegram -> @strevalbr
+  Please make sure the program you are running is download from: https://github.com/sponsord/profanity-tron
+  Author: telegram -> @dontond
 
 Fbi Warning:
 
@@ -85,12 +103,16 @@ Fbi Warning:
 |  ----  | ----  |
 |--help|查看帮助说明|
 |--matching|固定写法，后面跟上匹配规则文件|
-|--prefix-count|最少匹配前缀位数，默认 0。比如你可以配置为 8，那就匹配 8 个 T 的地址|
-|--suffix-count|最少匹配后缀位数，默认 6。比如你可以配置为 10，那就匹配 10 位的后缀（10位其实挺难的，估计要跑到天荒地老 :<）|
-|--quit-count|生成的地址达到指定的数量，即退出程序。比如你就想匹配一个地址，那就配置为 1。系统默认退出数量为 120|
-|--output|将生成的地址输出到文件（追加）。一行一个，格式如：privatekey,address|
+|--prefix-count|最少匹配前缀位数，默认 0。最大可设置为 10|
+|--suffix-count|最少匹配后缀位数，默认 0。最大可设置为 10|
+|--quit-count|生成的地址达到指定的数量，即退出程序。比如你就想匹配一个地址，那就配置为 1。出于计算性能考虑，系统默认退出数量为 120|
+|--output|将生成的地址输出到文件（追加）。一行一个，格式为：privatekey,address|
 |--post|将生成的地址，发送到（GET）指定的 url，每生成一条就会发送一次。数据格式为：privatekey=xx&address=yy。这个配置主要便于其它系统的集成|
-|--skip|跳过指定索引的 gpu 设备，如启动软件出现异常，请使用此参数跳过设备集成显卡|
+|--skip|跳过指定索引的 `GPU` 设备，如启动软件出现异常，请使用此参数跳过设备集成显卡|
+
+> 说明：对于 `--prefix-count` 和 `--suffix-count` 配置的值，大于该值的匹配也会一并输出。比如你配置 `--suffix-count 6`，那如果跑出来7位的号，也会一并输出。
+
+> 说明：首次运行软件，建议可先将 `--suffix-count` 设置为一个比较低的值（比如6位，6位容易出结果），观察是否有结果输出（有输出说明软硬件都是 ok 的）。不要一上来就设置一个比较大的值，对于比较大的值，有可能你跑一天都不会出结果，就会疑惑是软件的问题？还是确实太难了跑不出来？
 
 ### 匹配规则
 
@@ -98,51 +120,34 @@ Fbi Warning:
 
 #### 单个地址
 
-```bash  Mac/Linux
-./profanity --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --prefix-count 2 --suffix-count 4
-```bash  Windows
-profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --prefix-count 1 --suffix-count 4
-
-可以参考star.bat文件
-
-REM //   matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC  //代表选中地址
-REM //   output Trx-address.txt //代表GPU计算出地址后写入到Trx-address.txt这个文本内
-REM //   prefix-count 2         //代表匹配matching参数地址的前缀2位
-REM //   uffix-count 4          //代表匹配matching参数地址的尾缀4位
+```bash
+# 匹配前3后5
+profanity.exe --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 3 --suffix-count 5
 ```
 
 #### 文件
 
-```bash  Mac/Linux
-./profanity --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
-```bash  Windows
-profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
-
-可以参考star.bat文件
-
-REM //matching profanity.txt //代表使用profanity.txt内的地址
-REM //output Trx-address.txt //代表GPU计算出地址后写入到Trx-address.txt这个文本内
-REM //prefix-count 2         //代表匹配profanity.txt文本内前缀2位
-REM //uffix-count 4          //代表匹配profanity.txt文本内尾缀4位
+```bash
+# 匹配后8
+profanity.exe --matching profanity.txt --suffix-count 8 --quit-count 100
+```
 
 匹配文件里面，目前支持两种写法，可参考内置 `profanity.txt`。举个例子：
 
 ```plaintext
 TTTTTTTTTTZZZZZZZZZZ
-TTTTTTTTTT8888888888
-TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC
+TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D
 ```
 
 上面这两条匹配规则：
-- profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2 --suffix-count 4
-- 第一条，是匹配以字母 `Z,8` 前2位的前缀和后4位的尾缀的靓号。
-- 第二条，是匹配这条地址的前2后4 `6` 位，实际运行的时候，会自动修正为：TC-CCCCC。
+- 第一条，是匹配以字母 `Z` 结尾的地址。
+- 第二条，是匹配这条地址的前后 `10` 位，实际运行的时候，会自动修正为：TUqEg3dzVE8SBdhmao8D。
 
-有了匹配规则，再结合 `prefix-count`（最少匹配前缀数量） & `suffix-count`（最少匹配后缀数量），即可实现任意规则靓号地址生成。
+有了匹配规则，再结合 `prefix-count`（最少匹配前缀数量） & `suffix-count`（最少匹配后缀数量），即可实现任意规则地址生成。
 
 ## 开发
 
-> 这里主要讲讲如何构建 `windows` 平台的 `exe 可执行程序`。`mac` 机器理论上可直接 `make`，然后执行就行。PS:linux本人没有开发环境,请自行理解。
+> 这里主要讲讲如何构建 `windows` 平台的 `exe 可执行程序`。`mac` 机器理论上可直接 `make`，然后执行就行。
 
 > 本人在开发的时候，是买了一台阿里云 `v100 gpu卡` + `windows server 2022` 的抢占式实例。如果已经有对应的开发环境，可以不用花这个钱。
 
@@ -156,11 +161,11 @@ TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC
 
 2. 根据服务器配置搜索驱动，然后下载：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/nvidia.png?raw=true"/>
+<img width="100%" src="screenshot/nvidia.png?raw=true"/>
 
 3. 显卡驱动安装完毕后，打开设备管理器，可以查看到显卡信息（如果不安装驱动，是看不到这个的）：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/gpu.png?raw=true"/>
+<img width="100%" src="screenshot/gpu.png?raw=true"/>
 
 ### 安装 `visual studio`
 
@@ -168,19 +173,19 @@ TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC
 
 2. 选择以下版本进行下载：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/nvidia.png"/>
+<img width="100%" src="screenshot/vs.png?raw=true"/>
 
 3. 下载后，打开安装程序，安装以下截图所示的组件：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/nvidia.png"/>
+<img width="100%" src="screenshot/vs1.png?raw=true"/>
 
-4. 以上软件安装完成后，就可以直接双击源码目录下面的 `profanity.sln`，打开项目进行开发了。
+4. 以上软件安装完成后，就可以进行开发了。
 
 > 关于 `visual studio` 如何开发、调试、构建 `cpp` 应用程序，不再本文档讨论范围。
 
 ### 开发备注
 
-- 不论开发环境是 `windows` 还是 `mac`，又或者是`Linux`在开发调试时可手动指定 `-I` 参数，将其设置为一个较小的值，可极大加快启动速度。
+- 不论开发环境是 `windows` 还是 `mac`，在开发调试时可手动指定 `-I` 参数，将其设置为一个较小的值，可极大加快启动速度。
 - `mac` 环境可能需要指定 `-w 1`，以生成正确的私钥。
 - 部分平台启动异常，可能需要使用 `-s` 参数，跳过设备搭载的集成显卡设备。
 
@@ -188,15 +193,21 @@ TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC
 
 本程序使用阿里云配置：`GPU 计算型 8 vCPU 32 GiB x 1 * NVIDIA V100`。运行速度在 `2.2亿 H/s` 左右：
 
-<img width="100%" src="https://github.com/xdeyyan/Tron-Profanity/blob/master/screenshot/demo.png?raw=true"/>
+<img width="100%" src="screenshot/demo.png?raw=true"/>
 
 > 本程序除了在开发机（一台老旧的 Mac），以及上述 `NVIDIA v100` 显卡上经过测试外，未在其它设备上进行速度测试。
 
 > 请不要纠结于对比各种设备、各种平台差异化的运行速度。没意义。
 
+最后，关于速度的问题再多提几句：
+
+- 理论上 `2.2亿 H/s` 左右的速度，跑 8 位的号码，可能一晚上出几个，也有可能一个都不出。
+- 你如果想跑 `10` 位的地址，不论是10连的后缀，还是前6后5，没个几天，估计你是跑不出来的。
+- 追求速度的，推荐使用 `nvdia 4090` 卡跑，去淘宝租，价格 `3K/月` 左右。速度可达 `5-6亿` 左右。
+
 ## 验证
 
-生成的私钥和地址务必进行匹配验证。验证地址：[https://secretscan.org/PrivateKeyTron](https://secretscan.org/PrivateKeyTron)
+生成的地址和私钥务必进行匹配验证。可尝试将私钥导入钱包，观察对应的地址是否和生成的地址一致。
 
 ## 安全
 
@@ -245,8 +256,10 @@ cl_ulong4 Dispatcher::Device::createSeed()
 
 ## 一点题外话
 
-现有市面上流传的 `gpu` 类靓号生成程序，基本上都是基于 `profanity` 修改而来。从技术角度来讲，如果出于作恶的目的，完全可以对原版程序的漏洞 `变本加厉`，做到 `秒秒钟` 的私钥爆破。尤其是在不提供源码，仅有一个 `exe 可执行程序` 的情况下，会让作恶的逻辑更加的黑盒。因此再次建议请勿运行任何 `非透明` 的可执行程序，在币圈这种社会达尔文主义盛行的行业，由此导致的资产损失可以说每天都在上演。言尽于此，祝大家好运 🤝
+现有市面上流传的 `GPU` 类地址生成程序，基本上都是基于 `profanity` 修改而来。从技术角度来讲，如果出于作恶的目的，完全可以对原版程序的漏洞 `变本加厉`，做到 `秒秒钟` 的私钥爆破。尤其是在不提供源码，仅有一个 `exe 可执行程序` 的情况下，会让作恶的逻辑更加的黑盒。因此再次建议请勿运行任何 `非透明` 的可执行程序，在币圈这种社会达尔文主义盛行的行业，由此导致的资产损失可以说每天都在上演。言尽于此，祝大家好运 🤝
 
 ## 联系
 
 - 电报: [@strevalbr](https://t.me/strevalbr)
+
+![Visitor Count](https://profile-counter.glitch.me/{sponsord}/count.svg)
