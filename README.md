@@ -8,7 +8,7 @@
 
 波场（TRX）地址生成器，利用 `GPU` 进行加速。代码开源，安全可靠 🔥
 
-<img width="100%" src="screenshot/demo.png?raw=true"/>
+<img width="100%" src="screenshot/demo.gig?raw=true"/>
 
 > Fbi Warning 1: 该程序仅用于学习交流，请勿用于非法用途。
 
