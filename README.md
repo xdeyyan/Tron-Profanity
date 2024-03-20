@@ -124,10 +124,10 @@ Fbi Warning:
 #### 单个地址
 
 ```bash
+# 匹配后6位
+profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --suffix-count 6 --quit-count 100
 # 匹配前2后5位
 profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --prefix-count 2 --suffix-count 5 --quit-count 100
-# 匹配后6
-profanity.exe --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --output Trx-address.txt --suffix-count 6 --quit-count 100
 ```
 
 #### 文件
