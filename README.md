@@ -16,7 +16,7 @@
 
 ## 广告
 
-需要程序二开，bug修复请联系我的Telegram：[@strevalbr](https://t.me/strevalbr)
+需要程序二开，bug修复请联系我的Telegram：[@strevalbr](https://t.me/strevalbr)<a href="https://t.me/strevalbr" target="_blank">跳转到新窗口打开</a>
 
 ## 说明
 
