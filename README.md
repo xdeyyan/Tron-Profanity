@@ -144,7 +144,7 @@ profanity.exe --matching profanity.txt --output Trx-address.txt --prefix-count 2
 ```plaintext
 TTTTTTTTTTZZZZZZZZZZ
 TDG25JBzvor6aA5q2GcxoyQ14cQVRzPwk7
-如果用上面匹配后6位的命令,那么久是匹配ZZZZZZ和RzPwk7尾缀
+如果用上面匹配后6位的命令,那么就是匹配ZZZZZZ和RzPwk7尾缀
 ```
 
 上面这两条匹配规则：
