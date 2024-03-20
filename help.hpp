@@ -32,7 +32,7 @@ Examples:
   ./profanity --matching profanity.txt --prefix-count 1 --suffix-count 10 --quit-count 1
   ./profanity --matching profanity.txt --output result.txt
   ./profanity --matching profanity.txt --post http://127.0.0.1:7002/api
-  ./profanity --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 2 --suffix-count 4 --quit-count 1
+  ./profanity --matching TCPV1F6cKV62UyKStyugB1ggxMY1E3CCCC --prefix-count 2 --suffix-count 4 --quit-count 1
 
 About:
 
