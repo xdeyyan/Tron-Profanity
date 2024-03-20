@@ -14,20 +14,6 @@
 
 > Fbi Warning 2: 本程序仅在本仓库发布并更新，请勿下载运行其它来路不明的版本，由此造成的一切损失，由使用者自行承担。
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My GitHub Pages Site</title>
-</head>
-<body>
-    <h1>欢迎来到我的GitHub Pages网站</h1>
-    <p>点击下面的链接在新窗口中打开内嵌页面：</p>
-    <a href="internal-page.html" target="_blank">点击这里打开内嵌页面</a>
-</body>
-</html>
-
-
 
 ## 广告
 
