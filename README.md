@@ -36,8 +36,6 @@ Tron-波场（TRX）靓号地址生成器，利用 `GPU` 进行加速。代码�
 
 > 如果提示 `vcruntime140_1.dll` 相关异常，请安装 `visual studio` 应用程序，官方下载链接：[https://visualstudio.microsoft.com/zh-hans/vs/](https://visualstudio.microsoft.com/zh-hans/vs/)
 
-## 说明
-
 > 如果提示 `OpenCL 找不到`，请安装 `cuda` 驱动。 
 
 ### Mac
