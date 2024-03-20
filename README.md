@@ -1,11 +1,11 @@
-# profanity-tron
+# Tron-profanity
 
 ![](https://img.shields.io/github/actions/workflow/status/sponsord/profanity-tron/release.yml)
 ![](https://img.shields.io/badge/baseon-gpu-yellowgreen.svg)
 ![](https://img.shields.io/badge/language-c,c++-orange.svg)
 ![](https://img.shields.io/badge/platform-windows,linux-yellow.svg)
 
-波场（TRX）地址生成器，利用 `GPU` 进行加速。代码开源，安全可靠 🔥
+Tron-波场（TRX）靓号地址生成器，利用 `GPU` 进行加速。代码开源，安全可靠 🔥
 
 <img width="100%" src="screenshot/demo.gif?raw=true"/>
 
