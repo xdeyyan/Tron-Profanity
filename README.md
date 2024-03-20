@@ -203,7 +203,7 @@ TDG25JBzvor6aA5q2GcxoyQ14cQVRzPwk7
 
 <img width="100%" src="screenshot/demo.gif?raw=true"/>
 
-> 本程序除了在开发机（一台公司给配的苹果 M2系列的 Mac），以及上述 `NVIDIA V100` 显卡上经过测试外，未在其它设备上进行速度测试。
+> 本程序除了在开发机（一台用了几年的M2系列的 Mac），以及上述 `NVIDIA V100` 显卡上经过测试外，未在其它设备上进行速度测试。
 
 > 请不要纠结于对比各种设备、各种平台差异化的运行速度。没意义。
 
