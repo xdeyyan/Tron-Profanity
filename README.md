@@ -28,7 +28,7 @@
 
 ### Windows
 
-下载 [Release.zip](https://github.com/xdeyyan/Tron-Profanity/releases/download/Release/Release.zip)，解压，然后直接运行 `start.bat` 即可。
+下载 [Release.zip](https://github.com/xdeyyan/Tron-Profanity/releases/download/Release/Release.zip) 解压，然后直接运行 `start.bat` 即可。
 
 > 请参考下文 `命令 & 参数` 章节说明，自行编辑 `start.bat` 配置运行参数。
 
