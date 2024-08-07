@@ -17,7 +17,7 @@ Tron-波场（TRX）靓号地址生成器，利用 `GPU` 进行加速。代码�
 
 ## 广告
 
-需要程序二开，bug修复请联系我的Telegram：[@strevalbr](https://t.me/strevalbr)
+需要程序二开，bug修复请联系我的Telegram：[@langaddress](https://t.me/langaddress)
 
 ## 说明
 
@@ -90,7 +90,7 @@ About:
   Profanity is a vanity address generator for Tron: https://tron.network
   The software is modified based on ethereum profanity: https://github.com/johguse/profanity
   Please make sure the program you are running is download from: https://github.com/xdeyyan/Tron-Profanity
-  Author: telegram -> @strevalbr
+  Author: telegram -> @langaddress
 
 Fbi Warning:
 
@@ -268,5 +268,5 @@ cl_ulong4 Dispatcher::Device::createSeed()
 
 ## 联系
 
-- 电报: [@straddress](https://t.me/staddressr)
+- 电报: [@langaddress](https://t.me/langaddressr)
 
