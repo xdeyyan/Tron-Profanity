@@ -268,5 +268,5 @@ cl_ulong4 Dispatcher::Device::createSeed()
 
 ## 联系
 
-- 电报: [@strevalbr](https://t.me/strevalbr)
+- 电报: [@straddress](https://t.me/staddressr)
 
